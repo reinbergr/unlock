@@ -26,8 +26,8 @@
 Приложение сгенерирует настройки → указываем их в настройках WIFI-сети в телефоне
 
 ## Используемые opensource-проекты
-<a href="https://github.com/Flowseal/zapret-discord-youtube" target="_blank">https://github.com/Flowseal/zapret-discord-youtube (стратегии)</a><br>
-<a href="https://github.com/Flowseal/tg-ws-proxy" target="_blank">https://github.com/Flowseal/tg-ws-proxy (tg-ws-proxy)</a>
+<b>[https://github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube) (стратегии)</b><br>
+<b>[https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy) (tg-ws-proxy)</b>
 
 ## Установка
-скачиваем <b>Unlock-Windows-1.0.0-Setup.exe</b> → устанавливаем → запускаем Unlock → выбираем стратегию (пока выбранная стратегия не будет работать) → настраиваем мобильные устройства (см пункты Telegram/Youtube на телефоне)
+скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем Unlock → выбираем стратегию (пока выбранная стратегия не будет работать) → настраиваем мобильные устройства (см пункты Telegram/Youtube на телефоне)
