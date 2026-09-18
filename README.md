@@ -4,7 +4,7 @@
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
 
 ## Install
-скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем → выбираем стратегию (пока выбранная стратегия не будет работать) → настраиваем мобильные устройства (см пункты Telegram/Youtube на телефоне)
+скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем → выбираем стратегию (пока выбранная стратегия не будет работать) → настраиваем мобильные устройства
 
 ## Цель
 Удобный выбор стратегии обхода блокировки Youtube/Telegram/Discord
