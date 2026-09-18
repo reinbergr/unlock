@@ -1,3 +1,5 @@
+<img width="50" height="50" alt="app-icon" src="https://github.com/user-attachments/assets/fe7c10e8-c100-44f7-99d7-f768b138f1a8" />
+
 <b>Приложение</b> для <b>Windows</b> <b>для обхода блокировок Youtube/Discord/Telegram.</b> Anti-DPI.
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
 
