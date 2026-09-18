@@ -1,4 +1,4 @@
-<b>Приложение</b> для <b>Windows</b> на базе проекта <a href="https://github.com/bol-van/zapret" target="_blank">zapret</a> <b>для обхода блокировок Youtube/Discord/Telegram.</b> DPI bypass tool
+<b>Приложение</b> для <b>Windows</b> <b>для обхода блокировок Youtube/Discord/Telegram.</b> Anti-DPI.
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
 
 ## Цель
