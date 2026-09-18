@@ -1,5 +1,6 @@
 
-.mainWrapper {}
+.mainWrapper {
+}
 
 .header {
     display: flex;
@@ -9,15 +10,16 @@
     margin-top: -40px;
     margin-left: -40px;
     margin-right: -40px;
-    font-size: 3rem;
-    color: black;
-    background-color: grey;
+    font-size: 1.9rem;
+    color: rgb(119, 119, 119);
+    background-color: rgb(44, 44, 44);
 }
 
 .items {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;
 }
 
 .item {
@@ -25,15 +27,19 @@
         min-width: 450px;
     }
     max-width: 450px;
-    background-color: grey;
+     color: rgb(192, 191, 191);
     padding: 20px;
     border-radius: 10px;
-    font-size: 1rem;
     font-weight: 400;
 }
 
 .itemTitle {
-    color: #050505;
+    color: #e9e9e9;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient( 120deg, #5d5d5e 30%, #868686);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
-    font-size: 2.3rem;
 }

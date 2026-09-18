@@ -39,12 +39,12 @@
     padding: 8px;
     font-size: 1rem;
     &:hover {
-        background-color: #72597e;
+        background-color: #2b2b2b;
         cursor: pointer;
     }
 }
 .optionSelected {
-    background-color: #72597e;
+    background-color: #2b2b2b;
     cursor: pointer;
 }
 
@@ -55,7 +55,7 @@
     right: 10px;
     svg {
         transform: scale(2);
-        fill: rgb(56, 56, 56);
+        fill: rgb(22, 22, 22);
     }
 }
 .arrowOpen {

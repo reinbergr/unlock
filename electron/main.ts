@@ -110,6 +110,7 @@ function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1150,
     height: 950,
+    backgroundColor: "black",
     icon: path.join(process.env.VITE_PUBLIC, 'app-icon.png'),
     webPreferences: {
       preload: path.join(dirname, 'preload.mjs'),

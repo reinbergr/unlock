@@ -1,5 +1,5 @@
 <b>Electron-приложение</b> для <b>Windows</b> на базе проекта <a href="https://github.com/bol-van/zapret" target="_blank">zapret</a> <b>для обхода блокировок Youtube/Discord/Telegram.</b> DPI bypass tool
-<img width="1136" height="952" alt="image" src="https://github.com/user-attachments/assets/88566e2c-eaab-454e-b66a-d46af712427a" />
+<img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
 
 ## Цель
 Удобный выбор стратегии обхода блокировки Youtube/Telegram/Discord
