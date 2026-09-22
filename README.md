@@ -26,8 +26,8 @@
 Приложение сгенерирует настройки → указываем их в настройках WIFI-сети в телефоне
 
 ## Used opensource
-<b>[https://github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube) (стратегии)</b><br>
-<b>[https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy) (tg-ws-proxy)</b>
+<b>[https://github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)</b><br>
+<b>[https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b>
 
 ## Stack
 Electron⚡️Vite https://electron-vite.github.io<br>
