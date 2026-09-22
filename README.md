@@ -9,7 +9,11 @@ Electron⚡️Vite https://electron-vite.github.io<br>
 Electron-builder https://www.electron.build<br>
 Node.js® https://nodejs.org/en<br>
 React https://react.dev<br>
-Typescript https://www.typescriptlang.org<br>
+Typescript https://www.typescriptlang.org<br><br>
+<b>📥Установка:</b> скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем → выбираем стратегию → настраиваем мобильные устройства<br>
+
+<b>⚠️NOTE:</b> Для корректной работы приложения включите безопасный DNS(Secure-DNS) в браузере и убедитесь что все ваши устройства находятся в одной локальной сети(LAN)
+
 
 <b>Used opensource:</b><br>
 [https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b><br>
@@ -18,10 +22,7 @@ Typescript https://www.typescriptlang.org<br>
 ## Скриншот
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
 
-## Установка
-качаем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем → выбираем стратегию → настраиваем мобильные устройства
-
-## Как работает
+## 🔀Как работает
 - [x] <b>2-прокси.</b> Приложение запустит 2 локальных прокси-сервера: <b>forward-proxy/tg-ws-proxy. </b>Первый решает проблему со входом в Youtube с IOS/Android. Второй решает проблему со входом в Telegram.
 - [x] <b>Выбор стратегии обхода DPI.</b> При выборе стратегии запустится <b>winws.exe</b> для модифицикации исходящих сетевых пакетов (через WinDivert/Windows) чтобы обмануть DPI/ТСПУ-фильтры провайдера. Это нужно чтоб заработал Youtube/Discord.
 - [x] <b>Закрытие приложения.</b> По дефолту оно свернется в трей.
