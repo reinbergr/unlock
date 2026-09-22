@@ -1,5 +1,5 @@
 
-<b>Приложение</b> для <b>Windows</b> <b>для обхода блокировок Youtube/Discord/Telegram</b>
+<b>Unlock</b> — простенькая программа для Windows <b>разработанная на фреймворке Electron</b> которая обходит DPI-блокировки и региональные ограничения. <b>Разблокирует YouTube, Discord, Instagram, Facebook, Telegram</b> заблокированные провайдером или РКН.
 
 ## Скриншот
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
