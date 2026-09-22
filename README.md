@@ -12,7 +12,7 @@ React https://react.dev<br>
 Typescript https://www.typescriptlang.org<br><br>
 <b>📥Установка:</b> скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем → выбираем стратегию → настраиваем мобильные устройства<br>
 
-<b>⚠️NOTE:</b> Для корректной работы приложения включите безопасный DNS(Secure-DNS) в браузере и убедитесь что все ваши устройства находятся в одной локальной сети(LAN)
+<b>⚠️NOTE:</b> для корректной работы приложения включите безопасный DNS(Secure-DNS) в браузере и убедитесь что все ваши устройства находятся в одной локальной сети(LAN)
 
 
 <b>Used opensource:</b><br>
