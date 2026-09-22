@@ -3,6 +3,18 @@
 ![GitHub Releases](https://img.shields.io/github/downloads/reinbergr/unlock/total?style=for-the-badge&logo=github&color=blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+<br>
+<b>Стек:</b> <br>
+Electron⚡️Vite https://electron-vite.github.io<br>
+Electron-builder https://www.electron.build<br>
+Node.js® https://nodejs.org/en<br>
+React https://react.dev<br>
+Typescript https://www.typescriptlang.org<br>
+
+<b>Used opensource:</b><br>
+[https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b><br>
+[https://github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
+
 ## Скриншот
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
 
@@ -25,14 +37,3 @@
 ## Youtube на телефоне
 Чтоб заработал Youtube на IOS/Android-смартфоне настраиваем прокси-сервер:<br>
 Приложение сгенерирует настройки → указываем их в настройках WIFI-сети в телефоне
-
-## Used opensource
-<b>[https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b><br>
-<b>[https://github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)</b>
-
-## Stack
-Electron⚡️Vite https://electron-vite.github.io<br>
-Electron-builder https://www.electron.build<br>
-Node.js® https://nodejs.org/en<br>
-React https://react.dev<br>
-Typescript https://www.typescriptlang.org
