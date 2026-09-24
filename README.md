@@ -2,7 +2,7 @@
 Программа имеет простой графический интерфейс а также поддержку Telegram/Youtube на IOS/Android<br>
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
-<br>
+<br><br>
 <b>Установка:</b> скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем <br>
 <b>Использование:</b> открываем UNLOCK → выбираем стратегию → настраиваем мобильные устройства<br>
 <b>NOTE:</b> все устройства должны быть в одной WIFI-сети / в браузере включен secure-DNS<br>
