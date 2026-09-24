@@ -19,5 +19,5 @@ Typescript https://www.typescriptlang.org<br><br>
 [https://github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b><br>
 [https://github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
 
-
+<b>App:</b><br>
 <img width="1136" height="943" alt="image" src="https://github.com/user-attachments/assets/d73be327-b3a5-4c7a-ac39-26055a5aefca" />
