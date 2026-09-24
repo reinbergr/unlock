@@ -3,14 +3,9 @@
 ![GitHub Releases](https://img.shields.io/github/downloads/reinbergr/unlock/total?style=for-the-badge&logo=github&color=blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-<br>
-<b>Стек:</b> <br>
-Electron⚡️Vite https://electron-vite.github.io<br>
-Electron-builder https://www.electron.build<br>
-Node.js® https://nodejs.org/en<br>
-React https://react.dev<br>
-Typescript https://www.typescriptlang.org<br><br>
-<b>📥Установка:</b><br> скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем<br>
+<br><br>
+<b>Стек:</b> Electron⚡️Vite https://electron-vite.github.io, Electron-builder, Node.js®, React, Typescript, SCSS<br><br>
+<b>📥Установка:</b>  скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем<br>
 
 <b>⚠️Использование:</b> перейдите в приложение → выберите стратегию → настройте мобильные устройства<br>
 <b>⚠️NOTE:</b> убедитесь что все ваши устройства находятся в одной WIFI-сети а в браузере включите secure-DNS<br>
