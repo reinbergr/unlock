@@ -1,4 +1,4 @@
-<b>UNLOCK</b> — программа для Windows которая обходит DPI-блокировки и региональные ограничения.<br> <b>Разблокирует: YouTube, Telegram, Discord, Instagram, Facebook</b> заблокированные провайдером или РКН.<br>
+<b>📦UNLOCK</b> — программа для Windows которая обходит DPI-блокировки и региональные ограничения.<br> <b>Разблокирует: YouTube, Telegram, Discord, Instagram, Facebook</b> заблокированные провайдером или РКН.<br>
 Программа имеет простой графический интерфейс а также поддержку Telegram/Youtube на IOS/Android.<br>
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
