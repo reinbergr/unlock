@@ -1,4 +1,4 @@
-<b>📦UNLOCK</b> — Electron-приложение для обхода DPI-блокировок.<br> <b>Разблокирует: YouTube, Telegram, Discord, Instagram, Facebook</b><br>
+<b>UNLOCK</b> — Electron-приложение для обхода DPI-блокировок.<br> <b>Разблокирует: YouTube, Telegram, Discord, Instagram, Facebook</b><br>
 Программа имеет простой графический интерфейс а также поддержку Telegram/Youtube на IOS/Android<br>
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
