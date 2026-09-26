@@ -13,5 +13,5 @@
 <br>
 
 <b>App:</b><br>
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/51c8330b-4ba7-4398-bedf-b9326d529ff2" /><br><br>
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/139a607b-c344-4321-ba07-d8dfc1d63d5b" /><br><br>
 <b>Стек:</b> Electron⚡️Vite: https://electron-vite.github.io, Electron-builder, Node.js®, React, Typescript, SCSS<br>
