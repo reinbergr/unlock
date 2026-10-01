@@ -11,8 +11,8 @@
 <b>APP:</b><br>
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7e310788-79ba-453a-8ac6-167a28c63bd0" /><br><br>
 <b>USED OPEN-SOURCE UNDER MIT:</b><br>
-[github.com/Flowseal/tg-ws-proxy](github.com/Flowseal/tg-ws-proxy)</b><br>
-[github.com/Flowseal/zapret-discord-youtube](github.com/Flowseal/zapret-discord-youtube)
+[https://github.com/Flowseal/tg-ws-proxy](github.com/Flowseal/tg-ws-proxy)</b><br>
+[https://github.com/Flowseal/zapret-discord-youtube](github.com/Flowseal/zapret-discord-youtube)
 <br>
 <b>STACK:</b><br>
 ![https://electron-vite.github.io](https://img.shields.io/badge/Electron-⚡️Vite-8A2BE2)
