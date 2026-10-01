@@ -1,4 +1,4 @@
-<b>Windows-приложение</b> для обхода блокировок: <b>YouTube/Telegram/Discord/Instagram/Facebook</b> в России</b><br>
+<b>Windows-приложение</b> для обхода блокировок <b>YouTube/Telegram/Discord/Instagram/Facebook</b> в России</b><br>
 Программа имеет простой графический интерфейс<br>
 <b>Есть возможность заходить в Telegram/Youtube c мобильных устройств (IOS/Android)</b> за счет разворачивания локальных прокси-серверов<br>
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
