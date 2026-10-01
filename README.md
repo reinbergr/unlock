@@ -7,13 +7,13 @@
 <b>Использование:</b> открываем UNLOCK → выбираем стратегию → настраиваем мобильные устройства<br>
 <b>NOTE:</b> все устройства должны быть в одной WIFI-сети / в браузере включен secure-DNS<br>
 
-<b>MIT:</b><br>
-[github.com/Flowseal/tg-ws-proxy](github.com/Flowseal/tg-ws-proxy)</b><br>
-[github.com/Flowseal/zapret-discord-youtube](github.com/Flowseal/zapret-discord-youtube)
-<br>
 
 <b>APP:</b><br>
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7e310788-79ba-453a-8ac6-167a28c63bd0" /><br><br>
+<b>USED OPEN-SOURCE UNDER MIT:</b><br>
+[github.com/Flowseal/tg-ws-proxy](github.com/Flowseal/tg-ws-proxy)</b><br>
+[github.com/Flowseal/zapret-discord-youtube](github.com/Flowseal/zapret-discord-youtube)
+<br>
 <b>STACK:</b><br>
 ![https://electron-vite.github.io](https://img.shields.io/badge/Electron-⚡️Vite-8A2BE2)
 ![https://www.electron.build](https://img.shields.io/badge/Electron%20-builder-8A2BE2)
