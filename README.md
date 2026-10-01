@@ -1,9 +1,7 @@
 <b>Windows-приложение</b> для обхода блокировок <b>YouTube/Telegram/Discord/Instagram/Facebook</b> в России</b><br>
 Программа имеет простой графический интерфейс<br>
-<b>Есть возможность заходить в Telegram/Youtube c мобильных устройств (IOS/Android)</b> за счет локальных прокси-серверов<br>
-![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
-<br><br>
+<b>Есть возможность заходить в Telegram/Youtube c IOS/Android</b> за счет локальных прокси-серверов<br>
+<br>
 <b>Установка:</b> скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем <br>
 <b>Использование:</b> открываем UNLOCK → выбираем стратегию → настраиваем мобильные устройства<br>
 <b>NOTE:</b> все устройства должны быть в одной WIFI-сети / в браузере включен secure-DNS<br>
