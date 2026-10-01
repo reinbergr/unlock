@@ -1,6 +1,6 @@
 <b>Windows-приложение</b> для обхода блокировок <b>YouTube/Telegram/Discord/Instagram/Facebook</b> в России</b><br>
 Программа имеет простой графический интерфейс<br>
-<b>Есть возможность заходить в Telegram/Youtube c мобильных устройств (IOS/Android)</b> за счет разворачивания локальных прокси-серверов<br>
+<b>Есть возможность заходить в Telegram/Youtube c мобильных устройств (IOS/Android)</b> за счет локальных прокси-серверов<br>
 ![Windows Version](https://img.shields.io/badge/Windows-10%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 <br><br>
@@ -13,6 +13,13 @@
 [github.com/Flowseal/zapret-discord-youtube](github.com/Flowseal/zapret-discord-youtube)
 <br>
 
-<b>App:</b><br>
+<b>APP:</b><br>
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7e310788-79ba-453a-8ac6-167a28c63bd0" /><br><br>
-<b>Стек:</b> Electron⚡️Vite: https://electron-vite.github.io, Electron-builder, Node.js®, React, Typescript, SCSS<br>
+<b>STACK:</b><br>
+![https://electron-vite.github.io](https://img.shields.io/badge/Electron-⚡️Vite-8A2BE2)
+![https://www.electron.build](https://img.shields.io/badge/Electron%20-builder-8A2BE2)
+![https://www.typescriptlang.org](https://img.shields.io/badge/Typescript-JSX-8A2BE2)
+![https://nodejs.org/en](https://img.shields.io/badge/Node.js®-8A2BE2)
+![https://react.dev](https://img.shields.io/badge/React-8A2BE2)
+![https://sass-lang.com](https://img.shields.io/badge/SCSS-8A2BE2)
+![](https://img.shields.io/badge/WINDOWS%2010/11-8A2BE2)
