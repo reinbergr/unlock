@@ -16,7 +16,7 @@
 <br>
 <b>STACK:</b><br>
 ![https://electron-vite.github.io](https://img.shields.io/badge/Electron-⚡️Vite-8A2BE2)
-![https://www.electron.build](https://img.shields.io/badge/Electron%20-builder-8A2BE2)
+![https://www.electron.build](https://img.shields.io/badge/Electron%20-Builder-8A2BE2)
 ![https://www.typescriptlang.org](https://img.shields.io/badge/Typescript-JSX-8A2BE2)
 ![https://nodejs.org/en](https://img.shields.io/badge/Node.js®-8A2BE2)
 ![https://react.dev](https://img.shields.io/badge/React-8A2BE2)
