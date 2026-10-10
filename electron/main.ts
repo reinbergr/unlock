@@ -63,6 +63,7 @@ const FORWARD_PROXY_DIR = path.join(RESOURCES_PARENT_DIR, "resources/lib/forward
 const TG_PROXY_DIR = path.join(RESOURCES_PARENT_DIR, "resources/exe/TgWsProxy_windows.exe");
 const FASTLIST_X86_DIR = path.join(RESOURCES_PARENT_DIR, "resources/exe/fastlist-0.3.0-x86.exe");
 const FASTLIST_X64_DIR = path.join(RESOURCES_PARENT_DIR, "resources/exe/fastlist-0.3.0-x64.exe");
+const UNLOCK_BAT_DIR = path.join(RESOURCES_PARENT_DIR, "resources/bat/unlock.bat");
 
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST;
 
@@ -72,10 +73,16 @@ let forwardProxyProcess: ChildProcess;
 let isQuitting = false;
 
 const terminateProcessByNameWMIC = (processName: string) => {
-  exec(`wmic process where name='${processName}' delete`, err => err && console.log("WMIC", err));
+  exec(`wmic process where name="${processName}" delete`, err => err && console.log("WMIC", err));
+}
+const stopServiceByNameWMIC = (serviceName: string) => {
+  exec(`wmic service where name="${serviceName}" call StopService`, err => err && console.log("WMIC", err));
 }
 
-const terminateChildProcess = () => {
+const onBeforeQuit = () => {}
+
+const onUnlockAppClose = () => {
+  isQuitting = true;
   const child = forwardProxyProcess;
   if (child) {
     child.removeAllListeners();
@@ -84,8 +91,11 @@ const terminateChildProcess = () => {
     child.stdin?.destroy();
     child.kill();
   }
-  terminateProcessByNameWMIC("TgWsProxy_windows.exe");
-  terminateProcessByNameWMIC("winws.exe");
+  // terminates:
+  // winws.exe
+  // TgWsProxy_windows.exe
+  // WinDivert/WinDivert14/unlock services
+  exec(`${UNLOCK_BAT_DIR} endService`, (error, stdout, stderr) => app.quit());
 }
 
 function createTray() {
@@ -99,7 +109,7 @@ function createTray() {
   const menu = Menu.buildFromTemplate([
     {label: "Открыть Unlock", click: () => { openMainWindow() }},
     {type: "separator"},
-    {label: "Закрыть Unlock", click: () => { isQuitting = true; app.quit() }}
+    {label: "Закрыть Unlock", click: () => { onUnlockAppClose() }}
   ]);
   tray.setContextMenu(menu);
   tray.setToolTip("Unlock");
@@ -108,8 +118,8 @@ function createTray() {
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
-    width: 1150,
-    height: 800,
+    width: 1250,
+    height: 750,
     backgroundColor: "black",
     icon: path.join(process.env.VITE_PUBLIC, 'app-icon.png'),
     webPreferences: {
@@ -145,7 +155,7 @@ function createMainWindow() {
   }
 }
 
-app.on("before-quit", () => terminateChildProcess());
+app.on("before-quit", () => onBeforeQuit());
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
@@ -166,9 +176,7 @@ app.on('activate', () => {
 
 ipcMain.on("bypassMethodChange", (event, method: string) => {
   try {
-    // close previous winws.exe using wmic (taskkill usage to kill winws.exe throws EPERM-error)
-    terminateProcessByNameWMIC("winws.exe");
-    exec(`${ZAPRET_DIR}"/${method}"`);
+    exec(`${UNLOCK_BAT_DIR} setService "${method}"`, (error, stdout, stderr) => {});
   }
   catch (error) {
     console.log("bypassMethodChange", error);

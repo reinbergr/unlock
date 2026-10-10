@@ -10,23 +10,32 @@
     margin-top: -40px;
     margin-left: -40px;
     margin-right: -40px;
-    font-size: 1.4rem;
+    padding-top: 5px;
+    font-size: 1.2rem;
     color: rgb(119, 119, 119);
     background-color: rgb(44, 44, 44);
 }
 
 .items {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 20px;
     justify-content: center;
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+    }
 }
 
 .item {
     &:first-child {
-        min-width: 450px;
+        @media (max-width: 1200px) {
+             min-width: 100%;
+        }
     }
-    max-width: 450px;
+    @media (max-width: 1200px) {
+        min-width: 100%;
+    }
+    max-width: 100%;
     color: rgb(192, 192, 192);
     padding: 20px;
     border-radius: 10px;
@@ -42,4 +51,9 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+}
+
+.qr {
+    border: 7px solid rebeccapurple;
+    border-radius: 7px;
 }
