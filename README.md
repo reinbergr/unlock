@@ -1,4 +1,4 @@
-<b>Windows-приложение</b> для обхода блокировок <b>YouTube/Telegram/Discord/Instagram/Facebook</b></b><br>
+<b>Windows-приложение</b> для обхода блокировок <b>YouTube/Telegram/Discord</b></b><br>
 Программа имеет простой графический интерфейс<br>
 <b>Есть возможность заходить в Telegram/Youtube c мобильных устройств</b> за счет локальных прокси-серверов<br>
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
@@ -7,8 +7,8 @@
 <b>Использование:</b> открываем UNLOCK → выбираем стратегию → настраиваем мобильные устройства<br>
 
 
-<b>APP:</b><br>
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/7e310788-79ba-453a-8ac6-167a28c63bd0" /><br><br>
+<b></b><br>
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/40c0b660-9bf7-43b2-838b-9f9fd7e598b8" /><br><br>
 <b>USED OPEN-SOURCE UNDER MIT:</b><br>
 [github.com/bol-van/zapret](https://github.com/bol-van/zapret)</b><br>
 [github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b><br>
