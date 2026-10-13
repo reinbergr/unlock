@@ -1,30 +1,39 @@
 
 import styles from "./Main.module.scss";
 import Selectbox, { SelectboxOption } from "../Selectbox/Selectbox";
+import { useClipboard } from "./hooks/useClipboard";
+import { useConfig } from "./hooks/useConfig";
 import { useStrategyTest } from "./hooks/useStrategyTest";
 import { StrategyTestResult, TelegramProxyConfigType } from "../../types";
 import { QRCodeSVG } from "qrcode.react";
 import { SquareLoader } from "react-spinners";
-
-const appName = "UNLOCK";
+import { Slide, ToastContainer, toast } from "react-toastify";
 
 export interface MainProps {
   ip: string;
   bypassMethods: SelectboxOption[];
   onSelectChange: (method: string) => void;
   strategyTestResult: StrategyTestResult;
-  telergamProxyConfig: TelegramProxyConfigType | null;
+  telergamProxyConfig: null | TelegramProxyConfigType;
 }
 
-export const Main: React.FC<MainProps> = ({ip, bypassMethods, onSelectChange, telergamProxyConfig, strategyTestResult}) => {
+export const Main: React.FC<MainProps> = ({onSelectChange, ip, bypassMethods, strategyTestResult, telergamProxyConfig: proxyTgConfig}) => {
+  const [copyToClipboard] = useClipboard();
   const strategy = useStrategyTest(strategyTestResult);
+  const config = useConfig(proxyTgConfig);
   const isInit = strategyTestResult === "installing" || strategyTestResult === "requesting";
+  
+  const notify = (text: string) => toast.success(text);
+
+  const clipboard = async (event: React.MouseEvent<HTMLSpanElement> ) => {
+    const clipboardValue = event.currentTarget.dataset.clipboard;
+    await copyToClipboard(clipboardValue || "");
+    notify("Скопировано в буфер");
+  }
 
   return (
     <div className={styles.mainWrapper}>
-      <header className={styles.header}>
-        {appName}
-      </header>
+      <header className={styles.header}>UNLOCK</header>
       <br></br>
       <br></br>
       <div className={styles.items}>
@@ -39,22 +48,23 @@ export const Main: React.FC<MainProps> = ({ip, bypassMethods, onSelectChange, te
           <div>
             <div className={styles.itemTitle}>TELEGRAM на IOS/Android</div>
             <div style={{marginBottom: "10px"}}>Чтобы Telegram заработал на вашем телефоне отсканируйте QR-code:</div>
-              {telergamProxyConfig && ip && <QRCodeSVG className={styles.qr} size={256} value={`tg://proxy?server=${ip}&port=${telergamProxyConfig.port}&secret=dd${telergamProxyConfig.secret}`} />}
+              {proxyTgConfig && ip && <QRCodeSVG className={styles.qr} size={206} value={`tg://proxy?server=${ip}&port=${proxyTgConfig.port}&secret=dd${proxyTgConfig.secret}`} />}
             <div>
               <div>Или настройте вручную: настройки → прокси → добавить прокси → mtproto</div>
-              <div style={{fontWeight: "500"}}>→ Сервер: {ip}</div>
-              <div style={{fontWeight: "500"}}>→ Порт: {telergamProxyConfig && telergamProxyConfig.port}</div>
-              <div style={{fontWeight: "500"}}>→ Ключ: dd{telergamProxyConfig && telergamProxyConfig.secret}</div>
+              <div className={styles.itemElement}>→ Сервер: <span onClick={clipboard} data-clipboard={ip}>{ip} [📋]</span></div>
+              <div className={styles.itemElement}>→ Порт: <span onClick={clipboard} data-clipboard={config.tg.port}>{config.tg.port} [📋]</span></div>
+              <div className={styles.itemElement}>→ Ключ: <span onClick={clipboard} data-clipboard={config.tg.secret}>{config.tg.secret} [📋]</span></div>
             </div>
           </div>
           <div style={{marginTop: "50px"}}>
             <div className={styles.itemTitle}>YOUTUBE на IOS/Android</div>
             <div>Чтобы Youtube заработал на вашем телефоне настройте прокси вашей WIFI-сети:</div>
-            <div style={{fontWeight: "500"}}>→ Сервер: {ip}</div>
-            <div style={{fontWeight: "500"}}>→ Порт: 8124</div>
+            <div className={styles.itemElement}>→ Сервер: <span onClick={clipboard} data-clipboard={ip}>{ip} [📋]</span></div>
+            <div className={styles.itemElement}>→ Порт: <span onClick={clipboard} data-clipboard={config.youtube.port}>{config.youtube.port} [📋]</span></div>
           </div>
         </div>
       </div>
+      <ToastContainer position="bottom-center" autoClose={1000} hideProgressBar newestOnTop closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="dark" transition={Slide} />
     </div>
   )
 }
