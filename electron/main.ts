@@ -1,14 +1,19 @@
 
 import type {TelegramProxyConfigType} from '../src/types';
-import {app, ipcMain, BrowserWindow, Tray, Menu} from 'electron';
+import {NETERRORS, YT, Discord, ResultType, strategyTest} from '../src/utils/strategyTest';
+import {app, ipcMain, BrowserWindow, Tray, Menu, dialog} from 'electron';
+import {psList} from "@heyikang/ps-list";
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
-import {psList} from "@heyikang/ps-list";
 import {ChildProcess, exec, spawn} from "node:child_process";
 import path from 'node:path';
+import util from "node:util";
 import fs from "node:fs";
 import ip from "ip";
 import appdataPath from 'appdata-path';
+import chokidar from "chokidar";
+
+const execute = util.promisify(exec);
 
 const isDevelopment = import.meta.env.MODE === "development";
 const require = createRequire(import.meta.url);
@@ -64,9 +69,11 @@ const TG_PROXY_DIR = path.join(RESOURCES_PARENT_DIR, "resources/exe/TgWsProxy_wi
 const FASTLIST_X86_DIR = path.join(RESOURCES_PARENT_DIR, "resources/exe/fastlist-0.3.0-x86.exe");
 const FASTLIST_X64_DIR = path.join(RESOURCES_PARENT_DIR, "resources/exe/fastlist-0.3.0-x64.exe");
 const UNLOCK_BAT_DIR = path.join(RESOURCES_PARENT_DIR, "resources/bat/unlock.bat");
+const ADMIN_CHECK_DIR = path.join(RESOURCES_PARENT_DIR, "resources/bat/temp/admin.check");
 
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, 'public') : RENDERER_DIST;
 
+let observeStrategyIntervalID: NodeJS.Timeout;
 let mainWindow: BrowserWindow | null;
 let tray: Tray | null;
 let forwardProxyProcess: ChildProcess;
@@ -77,6 +84,53 @@ const terminateProcessByNameWMIC = (processName: string) => {
 }
 const stopServiceByNameWMIC = (serviceName: string) => {
   exec(`wmic service where name="${serviceName}" call StopService`, err => err && console.log("WMIC", err));
+}
+
+const analyseStrategyTest = (tests: ResultType[]) => {
+  const {ABORTERROR, OTHERERROR} = NETERRORS;
+  const fails = {
+    youtube: false,
+    discord: false
+  };
+  const checkFail = (test: ResultType, service: typeof Discord | typeof YT) => {
+    const {host, status} = test;
+    for (const serviceKey of Object.keys(service)) if (host === service[serviceKey as keyof typeof service] && (status === ABORTERROR || status === OTHERERROR)) return true;
+  }
+  for (let i = 0; i < tests.length; i++) {
+    if (checkFail(tests[i], YT)) { fails.youtube = true }
+    if (checkFail(tests[i], Discord)) { fails.discord = true }
+  }
+  return fails;
+}
+
+const endObservation = (startTime: [number, number], diff: number) => process.hrtime(startTime)[0] >= diff;
+
+const observeStrategyChange = async () => {
+  let prevStrategy: string | undefined = undefined;
+  let isUnset = false;
+  const startTime = process.hrtime();
+  clearInterval(observeStrategyIntervalID);
+  observeStrategyIntervalID = setInterval(async () => {
+    try {
+      const {stdout, stderr} = await execute("@chcp 65001 > nul & reg query \"HKLM\\System\\CurrentControlSet\\Services\\unlock\" /v Strategy");
+      const result = /Strategy\s+REG_SZ\s+(.*?)\s*$/i.exec(stdout);
+      if (result) {
+        const strategy = result[1];
+        if (!prevStrategy) prevStrategy = strategy;
+        if (prevStrategy !== strategy || isUnset) {
+          clearInterval(observeStrategyIntervalID);
+          const test = await strategyTest();
+          const strategyTestResult = analyseStrategyTest(test);
+          return mainWindow?.webContents.send('strategyTestResult', strategyTestResult);
+        }
+      }
+      if (endObservation(startTime, 30)) clearInterval(observeStrategyIntervalID);
+    } catch (error) {
+      if (!isUnset) isUnset = true;
+      // ERROR: The system was unable to find the specified registry key or value.
+      if (endObservation(startTime, 30)) clearInterval(observeStrategyIntervalID);
+    }
+  }, 500);
 }
 
 const onBeforeQuit = () => {}
@@ -174,20 +228,46 @@ app.on('activate', () => {
   }
 });
 
-ipcMain.on("bypassMethodChange", (event, method: string) => {
-  try {
-    exec(`${UNLOCK_BAT_DIR} setService "${method}"`, (error, stdout, stderr) => {});
+ipcMain.on("bypassMethodChange", async (event, method: string) => {
+  // eslint-disable-next-line prefer-const
+  let timerId: NodeJS.Timeout;
+  if (!fs.existsSync(ADMIN_CHECK_DIR)) {
+    fs.writeFileSync(ADMIN_CHECK_DIR, "");
   }
-  catch (error) {
-    console.log("bypassMethodChange", error);
+  const watcher = chokidar.watch(ADMIN_CHECK_DIR);
+  const closeWatcher = () => watcher.close();
+  const errorWatcher = (error: unknown) => {
+    console.log(error);
+    closeWatcher();
   }
+  // if user granted admin-request batscript will remove admin.check
+  const unlinkWatcher = (path: string) => {
+    clearTimeout(timerId);
+    closeWatcher();
+    observeStrategyChange();
+    mainWindow?.webContents.send('strategyTestResult', "installing");
+  }
+  watcher.on("error", errorWatcher).on("unlink", unlinkWatcher);
+
+  const {stdout, stderr} = await execute(`${UNLOCK_BAT_DIR} setService "${method}.bat"`);
+  
+  timerId = setTimeout(() => {
+    closeWatcher();
+    mainWindow?.webContents.send('strategyTestResult', null);
+    dialog.showMessageBox(mainWindow as BrowserWindow, {
+      title: "Unlock.exe",
+      message: "Разрешите Unlock вносить изменения для установки стратегии",
+      type: "error",
+      buttons: ["OK"],
+    });
+  }, 4000);
 });
 
 ipcMain.on("getBypassMethods", () => {
   try {
     const bypassMethods = fs.readdirSync(ZAPRET_DIR);
     const omitList = ["bin", "utils", "lists"];
-    const bypassMethodsPrepared = bypassMethods.filter((value) => !omitList.includes(value));
+    const bypassMethodsPrepared = bypassMethods.filter((value) => !omitList.includes(value)).map(value => value.slice(0, -4));
     mainWindow?.webContents.send('bypassMethods', bypassMethodsPrepared);
   }
   catch(fsError) {

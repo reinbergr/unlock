@@ -9,6 +9,7 @@ interface Selectbox {
     text: string;
     options: SelectboxOption[];
     onSelectChange?: (method: string) => void;
+    disabled: boolean;
 }
 
 type SelectboxOptionProps = SelectboxOption & {onClick: (option: SelectboxOption["name"]) => void} & {selected: string | null};
@@ -23,12 +24,13 @@ const SelectboxOption: React.FC<SelectboxOptionProps> = ({name, value, selected,
     return <div className={className} data-name={name} onClick={clickEventHandler}>{value}</div>
 }
 
-const Selectbox: React.FC<Selectbox> = ({text, options, onSelectChange}) => {
+const Selectbox: React.FC<Selectbox> = ({text, options, disabled, onSelectChange}) => {
 
     const [opened, setOpened] = useState<boolean>(false);
     const [selected, setSelected] = useState<null | SelectboxOption["name"]>(null);
     const selectboxWrapperRef = useRef<HTMLDivElement>(null);
 
+    const selectboxWrapperClassName = disabled ? `${styles.selectboxWrapper} ${styles.selectboxDisabled}` : styles.selectboxWrapper;
     const selectboxClickEvent = () => {
         setOpened(!opened);
     }
@@ -55,7 +57,7 @@ const Selectbox: React.FC<Selectbox> = ({text, options, onSelectChange}) => {
         }
     }, []);
 
-    return <div className={styles.selectboxWrapper} ref={selectboxWrapperRef}>
+    return <div className={selectboxWrapperClassName} ref={selectboxWrapperRef}>
         <div className={styles.selectbox} onClick={selectboxClickEvent}>
             <div className={styles.text}>{selected ? selected : text}</div>
             <div className={opened ? `${styles.arrowOpen + " " + styles.arrow}` : styles.arrow}>

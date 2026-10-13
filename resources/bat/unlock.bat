@@ -8,9 +8,8 @@ if %errorlevel% neq 0 (
 	set "TEMPSCR=%temp%\getadmin.vbs"
 	set params=%*
 	set params=!params:"=""!
-	::.VBS WILL OPEN CURRENT .BAT WITH ADMIN-RIGHTS
+	::.VBS WILL OPEN CURRENT .BAT WITH ADMIN-RIGHTS AND PREPARED ARGS
 	echo set UAC = CreateObject^("Shell.Application"^) > "!TEMPSCR!"
-	::https://stackoverflow.com/questions/13414496/how-do-you-pass-parameters-containing-spaces-in-vbs
 	echo UAC.ShellExecute "cmd", "/c %~f0 !params!", "", "runas", 7 >> "!TEMPSCR!"
 	cscript //NOLOGO "!TEMPSCR!"
 	del "!TEMPSCR!" >nul 2>&1
@@ -19,11 +18,19 @@ if %errorlevel% neq 0 (
 
 ::START WORKING AS ADMIN
 if %1==setService (
+	call :removeTempFile
 	call :setService %2
 ) else if %1==endService (
 	call :endService
 )
 exit /b
+
+::REMOVE admin.check
+:removeTempFile
+	cd /d "%~dp0"
+	set "TempFile=temp\admin.check"
+	if exist temp\ if exist !TempFile! del /q !TempFile!
+goto :eof
 
 ::CREATE SERVICE WITH PARSED-ARGS
 :setService
@@ -107,7 +114,7 @@ exit /b
 	reg add "HKLM\System\CurrentControlSet\Services\!SRVCNAME!" /v Strategy /t REG_SZ /d "!filename!" /f
 goto :eof
 
-::STOP/KILL ALL CHILD SERVICES/EXEs
+::KILL ALL DEPENDING SERVICES/EXEs
 :endService
 	set SRVCNAME=unlock
 	net stop "WinDivert" >nul 2>&1

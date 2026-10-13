@@ -6,6 +6,10 @@
     }
     color: rgb(221, 221, 221);
 }
+.selectboxDisabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
 .selectbox {
     position: relative;
     border-radius: 12px;

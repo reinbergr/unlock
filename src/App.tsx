@@ -1,15 +1,17 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import type { SelectboxOption } from './components/Selectbox/Selectbox';
-import type { TelegramProxyConfigType } from './types';
+import type { StrategyTestResult, TelegramProxyConfigType } from './types';
 import { Main } from './components/Main/Main';
 
 function App() {
   const [bypassMethods, setBypassMethods] = useState<SelectboxOption[]>([]);
   const [ip, setIP] = useState<string>("");
   const [telergamProxyConfig, setTelegramProxyConfig] = useState<TelegramProxyConfigType | null>(null);
+  const [strategyTestResult, setStrategyTestResult] = useState<StrategyTestResult>(null);
   
   const onSelectChange = (method: string) => {
+    setStrategyTestResult("requesting");
     window.ipcRenderer.send("bypassMethodChange", method);
   }
 
@@ -20,9 +22,14 @@ function App() {
     window.ipcRenderer.on("ip", (event, ip) => setIP(ip));
     window.ipcRenderer.on("telegramProxyConfig", (event, config) => setTelegramProxyConfig(config));
     window.ipcRenderer.on("bypassMethods", (event, methods: string[]) => setBypassMethods(methods.map(method => ({name: method, value: method}))));
+    window.ipcRenderer.on("strategyTestResult", (event, results) => setStrategyTestResult(results));
   }, []);
 
-  return <Main ip={ip} bypassMethods={bypassMethods} onSelectChange={onSelectChange} telergamProxyConfig={telergamProxyConfig} />
+  return <Main ip={ip}
+    strategyTestResult={strategyTestResult}
+    bypassMethods={bypassMethods}
+    onSelectChange={onSelectChange}
+    telergamProxyConfig={telergamProxyConfig} />
 }
 
 export default App

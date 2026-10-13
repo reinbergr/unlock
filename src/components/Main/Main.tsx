@@ -1,20 +1,25 @@
 
 import styles from "./Main.module.scss";
 import Selectbox, { SelectboxOption } from "../Selectbox/Selectbox";
+import { useStrategyTest } from "./hooks/useStrategyTest";
+import { StrategyTestResult, TelegramProxyConfigType } from "../../types";
 import { QRCodeSVG } from "qrcode.react";
-import { TelegramProxyConfigType } from "../../types";
+import { SquareLoader } from "react-spinners";
 
 const appName = "UNLOCK";
-const appVer = "";
 
 export interface MainProps {
   ip: string;
   bypassMethods: SelectboxOption[];
   onSelectChange: (method: string) => void;
+  strategyTestResult: StrategyTestResult;
   telergamProxyConfig: TelegramProxyConfigType | null;
 }
 
-export const Main: React.FC<MainProps> = ({ip, bypassMethods, onSelectChange, telergamProxyConfig}) => {
+export const Main: React.FC<MainProps> = ({ip, bypassMethods, onSelectChange, telergamProxyConfig, strategyTestResult}) => {
+  const strategy = useStrategyTest(strategyTestResult);
+  const isInit = strategyTestResult === "installing" || strategyTestResult === "requesting";
+
   return (
     <div className={styles.mainWrapper}>
       <header className={styles.header}>
@@ -26,7 +31,9 @@ export const Main: React.FC<MainProps> = ({ip, bypassMethods, onSelectChange, te
         <div className={styles.item}>
           <div>⚠️Выберите стратегию обхода DPI</div>
           <div style={{fontWeight: "700", marginBottom: "5px"}}>⚠️Если Youtube не заработает выберите другую</div>
-          <Selectbox text="Стратегия обхода" options={bypassMethods} onSelectChange={onSelectChange} />
+          <Selectbox text="Стратегия обхода" options={bypassMethods} onSelectChange={onSelectChange} disabled={isInit} />
+          <br></br>
+          <div className={styles.spinner} style={{color: strategy?.color}}>{isInit && <SquareLoader size={12.5} />}&nbsp;{strategy?.text}</div>
         </div>
         <div className={styles.item}>
           <div>

@@ -17,3 +17,5 @@ export interface TelegramProxyConfigType {
     language: string;
     autostart: boolean;
 }
+
+export type StrategyTestResult = null | "requesting" | "installing" | {discord: boolean; youtube: boolean};

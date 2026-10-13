@@ -14,10 +14,12 @@
   "dependencies": {
     "@heyikang/ps-list": "^8.1.2",
     "appdata-path": "^1.0.0",
+    "chokidar": "^5.0.0",
     "ip": "^2.0.1",
     "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-spinners": "^0.17.1"
   },
   "devDependencies": {
     "@types/ip": "^1.1.3",

@@ -28,18 +28,19 @@
 
 .item {
     &:first-child {
+        min-width: 417px;
         @media (max-width: 1200px) {
              min-width: 100%;
         }
-    }
-    @media (max-width: 1200px) {
-        min-width: 100%;
     }
     max-width: 100%;
     color: rgb(192, 192, 192);
     padding: 20px;
     border-radius: 10px;
     font-weight: 400;
+    @media (max-width: 1200px) {
+        min-width: 100%;
+    }
 }
 
 .itemTitle {
@@ -56,4 +57,9 @@
 .qr {
     border: 7px solid rebeccapurple;
     border-radius: 7px;
+}
+
+.spinner {
+    display: flex;
+    align-items: center;
 }
