@@ -106,7 +106,7 @@ goto :eof
 	set SRVCNAME=unlock
 	net stop %SRVCNAME% >nul 2>&1
 	sc delete %SRVCNAME% >nul 2>&1
-	sc create %SRVCNAME% binPath= "\"%BIN_PATH%winws.exe\" !ARGS!" DisplayName= "!SRVCNAME!" start= auto
+	sc create %SRVCNAME% binPath= "\"%BIN_PATH%winws.exe\" !ARGS!" DisplayName= "!SRVCNAME!" start= demand
 	sc description %SRVCNAME% "anti-DPI"
 	sc start %SRVCNAME%
 	::set selectedFile=!selectedFile:~0,-4!
