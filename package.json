@@ -1,10 +1,10 @@
 {
-  "name": "unlock",
+  "name": "Unlock",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "author": "reinbergr (Ivan Reinberg)",
-  "description": "Desktop app to unlock blocked services in Russia: Youtube, Discord, Telegram",
+  "author": "Ivan Reinberg (reinbergr)",
+  "description": "Bypass ISP DPI and unlock YouTube/Telegram/Discord",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
