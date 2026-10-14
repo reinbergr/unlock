@@ -1,10 +1,17 @@
-<b>Windows-приложение</b> для обхода блокировок <b>YouTube/Telegram/Discord</b></b><br>
-Программа имеет простой графический интерфейс<br>
-<b>Есть возможность заходить в Telegram/Youtube c мобильных устройств</b> за счет локальных прокси-серверов<br>
+
+
+<img width="80" height="80" alt="app-icon" src="https://github.com/user-attachments/assets/f9c88349-0268-423b-a5aa-992195b2f1ee" />
+
+<b>Unlock.exe</b> это простое <b>Windows-приложение</b> для разблокировки <b>YouTube/Telegram/Discord</b></b><br>
+- [x] программа имеет простой графический интерфейс<br>
+- [x] возможность выбрать различные стратегий обхода ISP DPI-блокировок Youtube/Discord<br>
+- [x] анализ работоспособности выбранной anti-DPI стратегии<br>
+- [x] возможность пользоваться мобильным приложениями Telegram/Youtube за счет локальных прокси-серверов<br>
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 <br><br>
 <b>Установка:</b> скачиваем <b>[Unlock-Windows-1.0.0-Setup.exe](https://github.com/reinbergr/unlock/releases/download/v1.0.0/Unlock-Windows-1.0.0-Setup.exe)</b> → устанавливаем → запускаем <br>
-<b>Использование:</b> открываем UNLOCK → выбираем стратегию → настраиваем мобильные устройства<br>
+<b>Использование:</b> заходим в UNLOCK → выбираем стратегию → настраиваем мобильные устройства<br>
 
 
 <b></b><br>
