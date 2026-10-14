@@ -25,8 +25,9 @@
 
 
 <b></b><br>
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/40c0b660-9bf7-43b2-838b-9f9fd7e598b8" /><br><br>
-<b>USED OPEN-SOURCE UNDER MIT:</b><br>
-[github.com/bol-van/zapret](https://github.com/bol-van/zapret)</b><br>
-[github.com/Flowseal/tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy)</b><br>
-[github.com/Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
+<img width="1219" height="707" alt="Безымянный" src="https://github.com/user-attachments/assets/c6f87e4f-d295-4580-b86c-c342b29366ed" />
+<br><br>
+<b>Unlock.exe разработан на базе opensource/MIT-проектов с открытым исходным кодом:</b><br>
+[zapret](https://github.com/bol-van/zapret) @bol-van</b><br>
+[tg-ws-proxy](https://github.com/Flowseal/tg-ws-proxy) @Flowseal</b><br>
+[zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube) @Flowseal
