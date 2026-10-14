@@ -14,10 +14,8 @@ enum YT {
   Image = "https://i.ytimg.com",
   VideoRedirect = "https://redirector.googlevideo.com"
 }
-enum Google {Main = "https://www.google.com", Gstatic = "https://www.gstatic.com"}
-enum Cloudflare {Web = "https://www.cloudflare.com", CDN = "https://cdnjs.cloudflare.com"}
 
-export {NETERRORS, Discord, YT, Google, Cloudflare}
+export {NETERRORS, Discord, YT}
 
 export const strategyTest = async () => {
   const createFetch = async (host: string) => {
@@ -43,10 +41,6 @@ export const strategyTest = async () => {
     YT.Web,
     YT.Short,
     YT.Image,
-    YT.VideoRedirect,
-    Google.Main,
-    Google.Gstatic,
-    Cloudflare.Web,
-    Cloudflare.CDN
+    YT.VideoRedirect
   ].map(host => createFetch(host)));
 }

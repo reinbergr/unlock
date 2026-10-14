@@ -124,11 +124,11 @@ const observeStrategyChange = async () => {
           return mainWindow?.webContents.send('strategyTestResult', strategyTestResult);
         }
       }
-      if (endObservation(startTime, 30)) clearInterval(observeStrategyIntervalID);
+      if (endObservation(startTime, 50)) clearInterval(observeStrategyIntervalID);
     } catch (error) {
       if (!isUnset) isUnset = true;
       // ERROR: The system was unable to find the specified registry key or value.
-      if (endObservation(startTime, 30)) clearInterval(observeStrategyIntervalID);
+      if (endObservation(startTime, 50)) clearInterval(observeStrategyIntervalID);
     }
   }, 500);
 }

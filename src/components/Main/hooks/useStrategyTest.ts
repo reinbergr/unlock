@@ -9,6 +9,6 @@ export const useStrategyTest = (strategyTestResult: StrategyTestResult) => {
     if (!discord && !youtube) return {text: "✅Выбранная стратегия работает для Discord и Youtube", color: "#44944a"};
     if (!discord && youtube) return {text: "⚠️Выбранная стратегия работает только для Discord", color: "#fffaa0"};
     if (!youtube && discord) return {text: "⚠️Выбранная стратегия работает только для Youtube", color: "#fffaa0"};
-    if (youtube && discord) return {text: "❌Выбранная стратегия не работает для Discord и Youtube", color: "#a12330"};
+    if (youtube && discord) return {text: "Выбранная стратегия не работает для вашего провайдера и не обходит DPI-блокировки Discord/Youtube (рекомендуем поменять стратерию)", color: "#a12330"};
   }
 }
