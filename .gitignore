@@ -13,6 +13,7 @@ dist
 dist-ssr
 dist-electron
 *.local
+resources/bat/temp/*
 
 # Editor directories and files
 .vscode/*
