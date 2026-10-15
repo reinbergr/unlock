@@ -1,5 +1,4 @@
 
-
 <img width="80" height="80" alt="app-icon" src="https://github.com/user-attachments/assets/f9c88349-0268-423b-a5aa-992195b2f1ee" />
 
 <b>Unlock.exe</b> это простое <b>Windows-приложение</b> для разблокировки <b>YouTube/Telegram/Discord</b></b><br>
@@ -25,7 +24,7 @@
 
 
 <b></b><br>
-<img width="1219" height="707" alt="Безымянный" src="https://github.com/user-attachments/assets/c6f87e4f-d295-4580-b86c-c342b29366ed" />
+<img width="1219" height="707" alt="Безымянный" src="https://github.com/user-attachments/assets/99301021-dac2-409c-b238-19b08482c742" />
 <br><br>
 <b>Unlock.exe разработан на базе opensource/MIT-проектов с открытым исходным кодом:</b><br>
 [zapret](https://github.com/bol-van/zapret) @bol-van</b><br>
