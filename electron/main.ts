@@ -229,12 +229,13 @@ app.on('activate', () => {
 });
 
 ipcMain.on("bypassMethodChange", async (event, method: string) => {
+  const adminCheckDir = path.join(appdataPath(), "unlock/admin.check");
   // eslint-disable-next-line prefer-const
   let timerId: NodeJS.Timeout;
-  if (!fs.existsSync(ADMIN_CHECK_DIR)) {
-    fs.writeFileSync(ADMIN_CHECK_DIR, "");
+  if (!fs.existsSync(adminCheckDir)) {
+    fs.writeFileSync(adminCheckDir, "");
   }
-  const watcher = chokidar.watch(ADMIN_CHECK_DIR);
+  const watcher = chokidar.watch(adminCheckDir);
   const closeWatcher = () => watcher.close();
   const errorWatcher = (error: unknown) => {
     console.log(error);

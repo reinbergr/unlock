@@ -46,4 +46,4 @@ server.on("connection", clientToProxySocket => {
 
 server.on("error", err => {throw err});
 server.on("close", () => console.log("[client->proxy] connection closed"));
-server.listen(PROXY_PORT, PROXY_HOST, () => console.log(`Proxy running at http://${PROXY_HOST}:${PROXY_PORT}`));
+server.listen(PROXY_PORT, PROXY_HOST, () => console.log(`Proxy running at ${PROXY_HOST}:${PROXY_PORT}`));

@@ -27,9 +27,8 @@ exit /b
 
 ::REMOVE admin.check
 :removeTempFile
-	cd /d "%~dp0"
-	set "TempFile=temp\admin.check"
-	if exist temp\ if exist !TempFile! del /q !TempFile!
+	set "TempFile=%APPDATA%\unlock\admin.check"
+	if exist !TempFile! del /q !TempFile!
 goto :eof
 
 ::CREATE SERVICE WITH PARSED-ARGS

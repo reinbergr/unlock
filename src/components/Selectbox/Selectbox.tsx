@@ -27,7 +27,7 @@ const SelectboxOption: React.FC<SelectboxOptionProps> = ({name, value, selected,
 const Selectbox: React.FC<Selectbox> = ({text, options, disabled, onSelectChange}) => {
 
     const [opened, setOpened] = useState<boolean>(false);
-    const [selected, setSelected] = useState<null | SelectboxOption["name"]>(null);
+    const [selected, setSelected] = useState<null | SelectboxOption["name"]>(window.sessionStorage.getItem("selectedStrategy"));
     const selectboxWrapperRef = useRef<HTMLDivElement>(null);
 
     const selectboxWrapperClassName = disabled ? `${styles.selectboxWrapper} ${styles.selectboxDisabled}` : styles.selectboxWrapper;
@@ -41,6 +41,7 @@ const Selectbox: React.FC<Selectbox> = ({text, options, disabled, onSelectChange
         if (onSelectChange) {
             onSelectChange(option);
         }
+        window.sessionStorage.setItem("selectedStrategy", option);
     }
 
     useEffect(() => {
