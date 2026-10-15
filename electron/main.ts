@@ -1,7 +1,7 @@
 
 import type {TelegramProxyConfigType} from '../src/types';
 import {NETERRORS, YT, Discord, ResultType, strategyTest} from '../src/utils/strategyTest';
-import {app, ipcMain, BrowserWindow, Tray, Menu, dialog} from 'electron';
+import {app, ipcMain, BrowserWindow, Tray, Menu, dialog, nativeTheme} from 'electron';
 import {psList} from "@heyikang/ps-list";
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
@@ -12,6 +12,8 @@ import fs from "node:fs";
 import ip from "ip";
 import appdataPath from 'appdata-path';
 import chokidar from "chokidar";
+
+nativeTheme.themeSource = 'dark';
 
 const execute = util.promisify(exec);
 
@@ -174,7 +176,8 @@ function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1250,
     height: 750,
-    backgroundColor: "black",
+    title: "Unlock v1.0.0 Bypass ISP DPI",
+    backgroundColor: "#2C2C2C",
     icon: path.join(process.env.VITE_PUBLIC, 'app-icon.png'),
     webPreferences: {
       preload: path.join(dirname, 'preload.mjs'),
@@ -207,6 +210,8 @@ function createMainWindow() {
   } else {
     mainWindow.loadFile(path.join(RENDERER_DIST, 'index.html'));
   }
+
+  mainWindow.removeMenu();
 }
 
 app.on("before-quit", () => onBeforeQuit());

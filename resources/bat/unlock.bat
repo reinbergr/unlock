@@ -116,10 +116,10 @@ goto :eof
 ::KILL ALL DEPENDING SERVICES/EXEs
 :endService
 	set SRVCNAME=unlock
-	net stop "WinDivert" >nul 2>&1
-	sc delete "WinDivert" >nul 2>&1
-	net stop "WinDivert14" >nul 2>&1
-	sc delete "WinDivert14" >nul 2>&1
+	::net stop "WinDivert" >nul 2>&1
+	::sc delete "WinDivert" >nul 2>&1
+	::net stop "WinDivert14" >nul 2>&1
+	::sc delete "WinDivert14" >nul 2>&1
 	net stop %SRVCNAME% >nul 2>&1
 	sc delete %SRVCNAME% >nul 2>&1
 	tasklist /FI "IMAGENAME eq TgWsProxy_windows.exe" | find /I "TgWsProxy_windows.exe" >nul

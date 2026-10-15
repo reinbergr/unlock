@@ -23,7 +23,7 @@ export const Main: React.FC<MainProps> = ({onSelectChange, ip, bypassMethods, st
   const config = useConfig(proxyTgConfig);
   const isInit = strategyTestResult === "installing" || strategyTestResult === "requesting";
   
-  const notify = (text: string) => toast.success(text);
+  const notify = (text: string) => toast.info(text);
 
   const clipboard = async (event: React.MouseEvent<HTMLSpanElement> ) => {
     const clipboardValue = event.currentTarget.dataset.clipboard;
@@ -33,7 +33,7 @@ export const Main: React.FC<MainProps> = ({onSelectChange, ip, bypassMethods, st
 
   return (
     <div className={styles.mainWrapper}>
-      <header className={styles.header}>UNLOCK</header>
+      <header className={styles.header}><img width={25} src="app-icon.png" />NLOCK</header>
       <br></br>
       <br></br>
       <div className={styles.items}>
@@ -51,16 +51,16 @@ export const Main: React.FC<MainProps> = ({onSelectChange, ip, bypassMethods, st
               {proxyTgConfig && ip && <QRCodeSVG className={styles.qr} size={206} value={`tg://proxy?server=${ip}&port=${proxyTgConfig.port}&secret=dd${proxyTgConfig.secret}`} />}
             <div>
               <div>Или настройте вручную: настройки → прокси → добавить прокси → mtproto</div>
-              <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={ip}>[📋]</span> Сервер: {ip}</div>
-              <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={config.tg.port}>[📋]</span> Порт: {config.tg.port}</div>
-              <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={config.tg.secret}>[📋]</span> Ключ: {config.tg.secret}</div>
+              <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={ip}>[📋]</span> Сервер: <span className={styles.itemElementValue}>{ip}</span></div>
+              <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={config.tg.port}>[📋]</span> Порт: <span className={styles.itemElementValue}>{config.tg.port}</span></div>
+              <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={config.tg.secret}>[📋]</span> Ключ: <span className={styles.itemElementValue}>{config.tg.secret}</span></div>
             </div>
           </div>
           <div style={{marginTop: "50px"}}>
             <div className={styles.itemTitle}>YOUTUBE на IOS/Android</div>
             <div>Чтобы Youtube заработал на вашем телефоне настройте прокси вашей WIFI-сети:</div>
-            <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={ip}>[📋]</span> Сервер: {ip}</div>
-            <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={config.youtube.port}>[📋]</span> Порт: {config.youtube.port}</div>
+            <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={ip}>[📋]</span> Сервер: <span className={styles.itemElementValue}>{ip}</span></div>
+            <div className={styles.itemElement}><span onClick={clipboard} data-clipboard={config.youtube.port}>[📋]</span> Порт: <span className={styles.itemElementValue}>{config.youtube.port}</span></div>
           </div>
         </div>
       </div>
